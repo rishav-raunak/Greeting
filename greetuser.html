@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali & Chhath Puja Greetings</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a festive look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Meta tags for social sharing -->
+    <meta property="og:title" content="Festive Greetings for Diwali & Chhath Puja!">
+    <meta property="og:description" content="Create and send beautiful, animated greeting cards to your friends and family.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0f172a/facc15?text=Happy+Festivals!">
+    <meta property="og:url" content="https://example.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        .hindi-font {
+            font-family: 'Tiro Devanagari Hindi', serif;
+        }
+        #fireworks-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(180deg, #0f172a 0%, #334155 100%);
+        }
+        .card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-link:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+
+    <!-- Canvas for background fireworks animation -->
+    <canvas id="fireworks-canvas"></canvas>
+
+    <!-- Main Container -->
+    <div id="main-container" class="container mx-auto px-4 py-8 sm:py-16">
+        
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-amber-400 hindi-font">त्योहारों की शुभकामनाएं</h1>
+            <p class="text-slate-300 mt-2 text-lg">Choose a card to create and share your greeting.</p>
+        </header>
+
+        <!-- Greeting Card Grid -->
+        <section id="card-selection-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            <!-- Card 1: Diwali -->
+            <a href="#" class="card-link" data-type="diwali" data-title="Happy Diwali" data-greeting="शुभ दीपावली" data-card-id="1">
+                <div class="card-content h-[400px] max-w-sm w-full mx-auto rounded-xl shadow-lg flex flex-col justify-between p-6 bg-gradient-to-br from-amber-500/20 via-red-500/20 to-purple-600/20 backdrop-blur-sm border border-white/10">
+                    <div class="text-center">
+                        <h2 class="text-4xl font-bold text-amber-300 hindi-font">शुभ दीपावली</h2>
+                        <img src="https://placehold.co/150x150/transparent/FFFFFF?text=🪔" alt="Diya" class="mx-auto my-8 opacity-80"/>
+                    </div>
+                    <div class="h-[50px] flex items-center justify-center text-center bg-black/30 rounded-lg">
+                        <p class="text-slate-200">Diwali Greeting</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Card 2: Diwali -->
+             <a href="#" class="card-link" data-type="diwali" data-title="Happy Diwali" data-greeting="दीपावली की हार्दिक शुभकामनाएं" data-card-id="2">
+                <div class="card-content h-[400px] max-w-sm w-full mx-auto rounded-xl shadow-lg flex flex-col justify-between p-6 bg-gradient-to-br from-yellow-400/20 via-orange-500/20 to-rose-600/20 backdrop-blur-sm border border-white/10">
+                    <div class="text-center">
+                        <h2 class="text-4xl font-bold text-yellow-200 hindi-font">दीपावली की हार्दिक शुभकामनाएं</h2>
+                        <img src="https://placehold.co/150x150/transparent/FFFFFF?text=🎆" alt="Firecracker" class="mx-auto my-8 opacity-80"/>
+                    </div>
+                    <div class="h-[50px] flex items-center justify-center text-center bg-black/30 rounded-lg">
+                        <p class="text-slate-200">Festival of Lights</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Card 3: Diwali -->
+            <a href="#" class="card-link" data-type="diwali" data-title="Happy Diwali" data-greeting="रोशनी का पर्व" data-card-id="3">
+                <div class="card-content h-[400px] max-w-sm w-full mx-auto rounded-xl shadow-lg flex flex-col justify-between p-6 bg-gradient-to-br from-sky-400/20 via-indigo-500/20 to-fuchsia-600/20 backdrop-blur-sm border border-white/10">
+                    <div class="text-center">
+                        <h2 class="text-4xl font-bold text-sky-200 hindi-font">रोशनी का पर्व</h2>
+                         <img src="https://placehold.co/150x150/transparent/FFFFFF?text=✨" alt="Sparkles" class="mx-auto my-8 opacity-80"/>
+                    </div>
+                    <div class="h-[50px] flex items-center justify-center text-center bg-black/30 rounded-lg">
+                        <p class="text-slate-200">Shimmering Diwali</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Card 4: Chhath Puja -->
+            <a href="#" class="card-link" data-type="chhath" data-title="Happy Chhath Puja" data-greeting="छठ पूजा की शुभकामनाएं" data-card-id="4">
+                <div class="card-content h-[400px] max-w-sm w-full mx-auto rounded-xl shadow-lg flex flex-col justify-between p-6 bg-gradient-to-br from-orange-400/20 via-amber-500/20 to-yellow-600/20 backdrop-blur-sm border border-white/10">
+                    <div class="text-center">
+                        <h2 class="text-4xl font-bold text-orange-200 hindi-font">छठ पूजा की शुभकामनाएं</h2>
+                        <img src="https://placehold.co/150x150/transparent/FFFFFF?text=☀️" alt="Sun" class="mx-auto my-8 opacity-80"/>
+                    </div>
+                    <div class="h-[50px] flex items-center justify-center text-center bg-black/30 rounded-lg">
+                        <p class="text-slate-200">Chhath Puja Greeting</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Card 5: Chhath Puja -->
+            <a href="#" class="card-link" data-type="chhath" data-title="Happy Chhath Puja" data-greeting="जय छठी मैया" data-card-id="5">
+                <div class="card-content h-[400px] max-w-sm w-full mx-auto rounded-xl shadow-lg flex flex-col justify-between p-6 bg-gradient-to-br from-red-500/20 via-yellow-400/20 to-orange-500/20 backdrop-blur-sm border border-white/10">
+                    <div class="text-center">
+                        <h2 class="text-4xl font-bold text-red-200 hindi-font">जय छठी मैया</h2>
+                        <img src="https://placehold.co/150x150/transparent/FFFFFF?text=🙏" alt="Prayer" class="mx-auto my-8 opacity-80"/>
+                    </div>
+                    <div class="h-[50px] flex items-center justify-center text-center bg-black/30 rounded-lg">
+                        <p class="text-slate-200">Wishes for Chhath</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+    </div>
+
+    <!-- Full Screen Greeting Modal / Shared Greeting View -->
+    <div id="greeting-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-lg z-50 flex items-center justify-center p-4">
+        <div class="w-full max-w-4xl text-center">
+            <!-- The greeting message that will be updated -->
+            <div id="full-greeting-message" class="mb-8">
+                <h1 id="greeting-title" class="text-5xl md:text-7xl font-bold text-amber-300 hindi-font"></h1>
+                <p id="greeting-by-line" class="text-2xl md:text-3xl text-slate-200 mt-4"></p>
+            </div>
+            
+            <!-- Form for creating a new greeting -->
+            <div id="create-greeting-section" class="mt-12 bg-white/10 p-6 rounded-xl max-w-lg mx-auto">
+                <p class="text-lg mb-4">Enter your name to create a personalized greeting:</p>
+                <input type="text" id="name-input" placeholder="Your Name" class="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-600 focus:ring-2 focus:ring-amber-400 focus:outline-none text-white text-center text-lg">
+                <button id="generate-link-btn" class="mt-4 w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 px-6 rounded-lg transition-colors">
+                    Create & Share Greeting
+                </button>
+            </div>
+
+            <!-- Section to show the generated link and share buttons -->
+            <div id="share-section" class="hidden mt-8 bg-white/10 p-6 rounded-xl max-w-lg mx-auto">
+                <p class="mb-2">Your personalized link is ready!</p>
+                <input type="text" id="generated-link-input" readonly class="w-full p-2 rounded bg-slate-800 border border-slate-600 text-center text-amber-300">
+                <div class="flex justify-center items-center gap-4 mt-4">
+                    <a id="share-whatsapp" href="#" target="_blank" class="p-3 bg-green-500 rounded-full hover:bg-green-600 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.655 4.398 1.803 6.12l-1.34 4.895 5.023-1.315z"/></svg>
+                    </a>
+                    <a id="share-twitter" href="#" target="_blank" class="p-3 bg-sky-500 rounded-full hover:bg-sky-600 transition-colors">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <button id="copy-link-btn" class="p-3 bg-slate-500 rounded-full hover:bg-slate-600 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Button for users who received a greeting to create their own -->
+            <div id="create-own-greeting-section" class="hidden mt-12">
+                 <button id="back-to-home-btn" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 px-6 rounded-lg transition-colors">
+                    Create Your Own Greeting
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Fireworks Animation ---
+        const canvas = document.getElementById('fireworks-canvas');
+        const ctx = canvas.getContext('2d');
+        let fireworks = [];
+        let particles = [];
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function Firework(sx, sy, tx, ty) {
+            this.x = sx;
+            this.y = sy;
+            this.sx = sx;
+            this.sy = sy;
+            this.tx = tx;
+            this.ty = ty;
+            this.distanceToTarget = Math.sqrt(Math.pow(tx - sx, 2) + Math.pow(ty - sy, 2));
+            this.distanceTraveled = 0;
+            this.coordinates = [];
+            this.coordinateCount = 3;
+            while (this.coordinateCount--) {
+                this.coordinates.push([this.x, this.y]);
+            }
+            this.angle = Math.atan2(ty - sy, tx - sx);
+            this.speed = 2;
+            this.acceleration = 1.05;
+            this.brightness = Math.random() * 50 + 50;
+            this.targetRadius = 1;
+        }
+
+        Firework.prototype.update = function(index) {
+            this.coordinates.pop();
+            this.coordinates.unshift([this.x, this.y]);
+
+            if (this.targetRadius < 8) {
+                this.targetRadius += 0.3;
+            } else {
+                this.targetRadius = 1;
+            }
+
+            this.speed *= this.acceleration;
+            let vx = Math.cos(this.angle) * this.speed;
+            let vy = Math.sin(this.angle) * this.speed;
+            this.distanceTraveled = Math.sqrt(Math.pow(this.x - this.sx, 2) + Math.pow(this.y - this.sy, 2));
+
+            if (this.distanceTraveled >= this.distanceToTarget) {
+                createParticles(this.tx, this.ty);
+                fireworks.splice(index, 1);
+            } else {
+                this.x += vx;
+                this.y += vy;
+            }
+        };
+
+        Firework.prototype.draw = function() {
+            ctx.beginPath();
+            ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
+            ctx.lineTo(this.x, this.y);
+            ctx.strokeStyle = 'hsl(' + Math.random() * 360 + ', 100%, ' + this.brightness + '%)';
+            ctx.stroke();
+        };
+
+        function Particle(x, y) {
+            this.x = x;
+            this.y = y;
+            this.coordinates = [];
+            this.coordinateCount = 5;
+            while (this.coordinateCount--) {
+                this.coordinates.push([this.x, this.y]);
+            }
+            this.angle = Math.random() * Math.PI * 2;
+            this.speed = Math.random() * 10 + 1;
+            this.friction = 0.95;
+            this.gravity = 1;
+            this.hue = Math.random() * 360;
+            this.brightness = Math.random() * 50 + 50;
+            this.alpha = 1;
+            this.decay = Math.random() * 0.03 + 0.015;
+        }
+
+        Particle.prototype.update = function(index) {
+            this.coordinates.pop();
+            this.coordinates.unshift([this.x, this.y]);
+            this.speed *= this.friction;
+            this.x += Math.cos(this.angle) * this.speed;
+            this.y += Math.sin(this.angle) * this.speed + this.gravity;
+            this.alpha -= this.decay;
+            if (this.alpha <= this.decay) {
+                particles.splice(index, 1);
+            }
+        };
+
+        Particle.prototype.draw = function() {
+            ctx.beginPath();
+            ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
+            ctx.lineTo(this.x, this.y);
+            ctx.strokeStyle = 'hsla(' + this.hue + ', 100%, ' + this.brightness + '%, ' + this.alpha + ')';
+            ctx.stroke();
+        };
+
+        function createParticles(x, y) {
+            let particleCount = 30;
+            while (particleCount--) {
+                particles.push(new Particle(x, y));
+            }
+        }
+
+        function loop() {
+            requestAnimationFrame(loop);
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.globalCompositeOperation = 'lighter';
+            
+            let i = fireworks.length;
+            while (i--) {
+                fireworks[i].draw();
+                fireworks[i].update(i);
+            }
+            
+            let j = particles.length;
+            while (j--) {
+                particles[j].draw();
+                particles[j].update(j);
+            }
+
+            if (Math.random() < 0.05) {
+                fireworks.push(new Firework(canvas.width / 2, canvas.height, Math.random() * canvas.width, Math.random() * canvas.height / 2));
+            }
+        }
+        
+        window.addEventListener('resize', () => {
+             canvas.width = window.innerWidth;
+             canvas.height = window.innerHeight;
+        });
+
+        loop();
+
+        // --- Greeting Card Logic ---
+        const mainContainer = document.getElementById('main-container');
+        const cardLinks = document.querySelectorAll('.card-link');
+        const modal = document.getElementById('greeting-modal');
+
+        const greetingTitleEl = document.getElementById('greeting-title');
+        const greetingByLineEl = document.getElementById('greeting-by-line');
+        
+        const createGreetingSection = document.getElementById('create-greeting-section');
+        const shareSection = document.getElementById('share-section');
+        const createOwnGreetingSection = document.getElementById('create-own-greeting-section');
+
+        const nameInput = document.getElementById('name-input');
+        const generateLinkBtn = document.getElementById('generate-link-btn');
+        const generatedLinkInput = document.getElementById('generated-link-input');
+        const copyLinkBtn = document.getElementById('copy-link-btn');
+        const backToHomeBtn = document.getElementById('back-to-home-btn');
+
+        let currentCardData = {};
+
+        // Function to show the modal
+        const showGreetingView = (cardData, name = "") => {
+            currentCardData = cardData;
+            mainContainer.classList.add('hidden');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            greetingTitleEl.textContent = cardData.greeting;
+            if (name) {
+                greetingByLineEl.textContent = `by ${name}`;
+                createGreetingSection.classList.add('hidden');
+                shareSection.classList.add('hidden');
+                createOwnGreetingSection.classList.remove('hidden');
+            } else {
+                greetingByLineEl.textContent = 'by ...';
+                createGreetingSection.classList.remove('hidden');
+                shareSection.classList.add('hidden');
+                createOwnGreetingSection.classList.add('hidden');
+                nameInput.value = '';
+            }
+        };
+
+        // Event listener for all cards
+        cardLinks.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                const cardData = {
+                    type: card.dataset.type,
+                    title: card.dataset.title,
+                    greeting: card.dataset.greeting,
+                    cardId: card.dataset.cardId
+                };
+                showGreetingView(cardData);
+            });
+        });
+
+        // Update greeting text as user types their name
+        nameInput.addEventListener('input', () => {
+            const name = nameInput.value.trim();
+            greetingByLineEl.textContent = name ? `by ${name}` : 'by ...';
+            shareSection.classList.add('hidden');
+        });
+
+        // Generate and display shareable link
+        generateLinkBtn.addEventListener('click', () => {
+            const name = nameInput.value.trim();
+            if (!name) {
+                alert('Please enter your name.');
+                return;
+            }
+
+            const baseUrl = window.location.origin + window.location.pathname;
+            const queryParams = new URLSearchParams({
+                name: name,
+                card: currentCardData.cardId
+            });
+            const finalUrl = `${baseUrl}?${queryParams.toString()}`;
+
+            generatedLinkInput.value = finalUrl;
+            shareSection.classList.remove('hidden');
+
+            // Setup share links
+            const shareText = encodeURIComponent(`I've sent you a ${currentCardData.title} greeting! ✨ Check it out: ${finalUrl}`);
+            document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${shareText}`;
+            document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?text=${shareText}`;
+        });
+
+        // Copy link to clipboard
+        copyLinkBtn.addEventListener('click', () => {
+            generatedLinkInput.select();
+            document.execCommand('copy');
+            copyLinkBtn.innerHTML = 'Copied!';
+            setTimeout(() => {
+                copyLinkBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+            }, 2000);
+        });
+        
+        // Back to home button
+        backToHomeBtn.addEventListener('click', () => {
+            window.location.href = window.location.origin + window.location.pathname;
+        });
+
+        // Check for URL params on page load
+        const urlParams = new URLSearchParams(window.location.search);
+        const nameParam = urlParams.get('name');
+        const cardIdParam = urlParams.get('card');
+
+        if (nameParam && cardIdParam) {
+            const targetCard = document.querySelector(`.card-link[data-card-id='${cardIdParam}']`);
+            if (targetCard) {
+                const cardData = {
+                    type: targetCard.dataset.type,
+                    title: targetCard.dataset.title,
+                    greeting: targetCard.dataset.greeting,
+                    cardId: targetCard.dataset.cardId
+                };
+                showGreetingView(cardData, nameParam);
+            }
+        }
+    });
+    </script>
+</body>
+</html>
