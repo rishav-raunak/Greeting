@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Soulfullines</title>
+
+  <!-- Optional: Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-from: #fff7ed; /* yellow-50 like */
+      --bg-to:   #fff1e6; /* orange-100 like */
+      --accent:  #c2410c; /* orange-700 like */
+      --text:    #374151; /* gray-700 like */
+      --muted:   #6b7280;
+      --card-max: 900px;
+      --radius: 14px;
+    }
+
+    /* Page reset */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin:0;
+      color:var(--text);
+      background: linear-gradient(135deg, var(--bg-from), var(--bg-to));
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+      padding:40px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* Container */
+    .about-card{
+      width:100%;
+      max-width:var(--card-max);
+      background: rgba(255,255,255,0.85);
+      border-radius:var(--radius);
+      padding: 36px;
+      box-shadow: 0 8px 30px rgba(15,23,42,0.08);
+      backdrop-filter: blur(6px);
+      text-align:center;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .about-card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 18px 50px rgba(15,23,42,0.12);
+    }
+
+    h1{
+      margin:0 0 14px 0;
+      font-size: clamp(28px, 4.5vw, 40px);
+      color: var(--accent);
+      font-weight:800;
+      letter-spacing:-0.01em;
+    }
+
+    .lead {
+      font-size: clamp(15px, 2vw, 18px);
+      margin:0 auto 18px auto;
+      max-width: 75ch;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .highlight{
+      font-weight:700;
+      color: rgba(0,0,0,0.85);
+    }
+
+    p {
+      margin: 0 0 14px 0;
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 75ch;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    /* small decorative row with icon placeholders */
+    .badges {
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      margin-top:20px;
+      flex-wrap:wrap;
+    }
+    .badge {
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+      border: 1px solid rgba(0,0,0,0.04);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color: var(--accent);
+      box-shadow: 0 4px 14px rgba(196,65,12,0.06);
+    }
+
+    /* responsive spacing */
+    @media (min-width:900px){
+      .about-card{ padding:46px; }
+      .lead{ max-width:68ch; }
+    }
+  </style>
+</head>
+<body>
+  <main class="about-card" role="main" aria-labelledby="about-heading">
+    <h1 id="about-heading">About</h1>
+
+    <p class="lead">
+      <strong>Soulfullines</strong> is a joyful web platform that helps people celebrate special moments with warmth and creativity. Whether it’s
+      <span class="highlight">Diwali, Chhath Puja, birthdays, Independence Day</span>, or any other happy occasion — Soulfullines lets you create
+      and share personalized greetings instantly through a single link.
+    </p>
+
+    <p>
+      Simply add your name, pick a beautiful festive template, and share your greeting link with friends and family around the world. It’s an easy,
+      heartfelt way to spread happiness and connect souls through celebrations.
+    </p>
+
+    <p>
+      Made with love, Soulfullines aims to bring smiles, spark joy, and make every festival or milestone memorable — because every celebration
+      deserves a soulful touch.
+    </p>
+
+    <div class="badges" aria-hidden="true">
+      <span class="badge">Shareable Links</span>
+      <span class="badge">10+ Templates</span>
+      <span class="badge">Mobile + Web</span>
+      <span class="badge">Instant Preview</span>
+    </div>
+  </main>
+</body>
+</html>
